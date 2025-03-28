@@ -1,0 +1,24 @@
+# Archivos y carpetas de Python
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Entorno virtual (si usas venv)
+venv/
+env/
+
+# Dependencias y paquetes instalados
+*.egg-info/
+*.dist-info/
+
+# Archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de caché de FastAPI/Uvicorn
+*.db
+*.sqlite3
+
+# Configuración de logs o bases de datos temporales
+data/chat.log
