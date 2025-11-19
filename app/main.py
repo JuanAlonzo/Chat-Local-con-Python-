@@ -1,5 +1,6 @@
 from fastapi import FastAPI, WebSocket
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
 from app.websocket import manager
 
 # Crear una instancia de FastAPI
@@ -22,5 +23,11 @@ async def websocket_endpoint(websocket: WebSocket, username: str):
                     await websocket.send_text("⚠️ Formato incorrecto. Usa '@usuario' mensaje.")
             else:
                 await manager.broadcast(f"{username}: {data}")
-    except:
+    except Exception as e:
+        print(f"Error en Websocket: {e}")
         await manager.disconnect(websocket)
+
+
+@app.get("/")
+async def get():
+    return RedirectResponse(url="/static/index.html")
