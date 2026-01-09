@@ -16,9 +16,7 @@ env/
 .DS_Store
 Thumbs.db
 
-# Archivos de caché de FastAPI/Uvicorn
+# Archivos de bases de datos
 *.db
 *.sqlite3
 
-# Configuración de logs o bases de datos temporales
-data/chat.log
